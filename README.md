@@ -6,21 +6,26 @@ Newest Info Agency 7-Financial Analysis System
     workon virtualenvName  (virtualenvwrapper)  
 ## Required python libs  
     pip install -r requirements.txt  
-## Run by development
-    Method 1) path> set FLASK_APP=hello.py
-              path> flask run
+## Run by development  
+Parameters:
+    --mode: develop/produce
+    --host: default 127.0.0.1
+    --port: default 8080 
+
+    Method 1) path> set FLASK_APP=manage.py  
+              path> flask run  
     
-    Method 2) path> python -m flask run
+    Method 2) path> python -m flask run  
     
-    Method 3) path>python -m flask run --host=0.0.0.0 (all users)
+    Method 3) path>python -m flask run --host=0.0.0.0 (all users)  
     
 ## Deploy by produce
-    Gunicorn Common 1) gunicorn -w 4 -b 127.0.0.1:4000 myproject:app
+    Gunicorn Common 1) gunicorn -w 4 -b 127.0.0.1:4000 myproject:app  
     
-    Gunicorn Factory 2) gunicorn "myproject:create_app()"
+    Gunicorn Factory 2) gunicorn "myproject:create_app()"  
     
-    uWSGI 1) uwsgi --http 127.0.0.1:5000 --module myproject:app
+    uWSGI 1) uwsgi --http 127.0.0.1:5000 --module myproject:app  
     
-    twistd 1) twistd -n web --port tcp:8080 --wsgi myproject.app
+    twistd 1) twistd -n web --port tcp:8080 --wsgi myproject.app  
     
-    Gevent 1) 
+    Gevent 1) python manage_gevent.py  

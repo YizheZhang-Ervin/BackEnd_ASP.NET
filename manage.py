@@ -14,9 +14,11 @@ app = create_app(env)
 
 @click.command()
 @click.option('--mode', default="develop", type=click.Choice(["develop", "produce"]), help="--develop/--produce")
-def run(mode):
+@click.option('--host', default='127.0.0.1', type=str, help='x.x.x.x')
+@click.option('--port', default='8080', type=str, help='1-65535')
+def run(mode, host, port):
     if mode == "develop":
-        app.run(host='127.0.0.1', debug=True, port=8080)
+        app.run(host=host, port=port)
     else:
         app.run()
 
