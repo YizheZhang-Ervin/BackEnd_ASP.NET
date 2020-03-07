@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <html lang="">
 <head>
-  <title>BEA GAS Tools</title>
+  <title>NIA7 FAS Tools</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <link href="{{ static_url('css/layout.css')}}" rel="stylesheet" type="text/css" media="all">
-  <link rel="shortcut icon" href="{{ static_url('img/homepage/favicon.ico') }}">
-  <script src="{{ static_url('js/preventhacker.js') }}"></script>
+  <link href="{{ url_for('static', filename='css/layout.css')}}" rel="stylesheet" type="text/css" media="all">
+  <link rel="shortcut icon" href="{{ url_for('static', filename='img/homepage/favicon.ico') }}">
+  <script src="{{ url_for('static', filename='js/preventhacker.js') }}"></script>
 </head>
 <body id="top" oncontextmenu=self.event.returnValue=false onselectstart="return false">
 
 <!-- Begin of page -->
-<div class="bgded" style="background-image:url({{static_url('img/homepage/backgrounds/bg-part0.png')}});">
+<div class="bgded" style="background-image:url({{ url_for('static', filename='img/homepage/backgrounds/bg-part0.png') }});">
   <div class="wrapper row1">
     <nav id="mainav" class="hoc clear">
       <ul class="clear">
@@ -20,8 +20,8 @@
     </nav>
     <header id="header" class="hoc clear">
       <div id="logo" class="fl_left">
-        <h1><a href="/">BEA</a></h1>
-        <p>Gold Analysis System</p>
+        <h1><a href="/">NIA7</a></h1>
+        <p>Financial Analysis System</p>
       </div>
       <div id="quickinfo" class="fl_right">
         <ul class="nospace inline">
@@ -40,7 +40,7 @@
   <div class="wrapper">
     <div id="breadcrumb" class="hoc clear">
       <!-- ################################################################################################ -->
-      <h6 class="heading">Gold Analysis System</h6>
+      <h6 class="heading">Financial Analysis System</h6>
       <!-- ################################################################################################ -->
       <ul>
         <li><a href="/">Home</a></li>
@@ -81,16 +81,16 @@
 <div class="wrapper row5">
   <div id="copyright" class="hoc clear">
     <!-- Copyright &copy; 2020 - All Rights Reserved - xxx -->
-    <p class="fl_left"><a href="/">Black Eight Agency</a></p>
-    <p class="fl_right"><a target="_blank" href="/">Gold Analysis System</a></p>
+    <p class="fl_left"><a href="/">Newest Info Agency 7</a></p>
+    <p class="fl_right"><a target="_blank" href="/">Financial Analysis System</a></p>
   </div>
 </div>
 <a id="backtotop" href="#top"><i class="fa fa-chevron-up"></i></a>
 
 <!-- JAVASCRIPTS -->
-<script src="{{ static_url('js/jquery.min.js') }}"></script>
-<script src="{{ static_url('js/jquery.backtotop.js') }}"></script>
-<script src="{{ static_url('js/jquery.mobilemenu.js') }}"></script>
-<script src="{{static_url('js/tools.js')}}"></script>
+<script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+<script src="{{ url_for('static', filename='js/jquery.backtotop.js') }}"></script>
+<script src="{{ url_for('static', filename='js/jquery.mobilemenu.js') }}"></script>
+<script src="{{ url_for('static', filename='js/tools.js') }}"></script>
 </body>
 </html>

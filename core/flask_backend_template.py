@@ -44,7 +44,7 @@ def main(name):
 
 
 # url & get/post method
-@app.route('/abc/?key=value', method=['GET', 'POST'])
+@app.route('/abc/?key=value', methods=['GET', 'POST'])
 def index():
     if request.method == 'POST':
         # return 'Hello world!'

@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <html lang="">
 <head>
-  <title>BEA GAS</title>
+  <title>NIA7 FAS</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <link href="{{ static_url('css/layout.css')}}" rel="stylesheet" type="text/css" media="all">
-  <link rel="shortcut icon" href="{{ static_url('img/homepage/favicon.ico') }}">
-  <script src="{{ static_url('js/preventhacker.js') }}"></script>
+  <link href="{{ url_for('static', filename='css/layout.css')}}" rel="stylesheet" type="text/css" media="all">
+  <link rel="shortcut icon" href="{{ url_for('static', filename='img/homepage/favicon.ico') }}">
+  <script src="{{ url_for('static', filename='js/preventhacker.js') }}"></script>
 </head>
 <body id="top" oncontextmenu=self.event.returnValue=false onselectstart="return false">
 <!-- Begin of page -->
-<div class="bgded" style="background-image:url({{ static_url('img/homepage/backgrounds/bg-part0.png') }});">
+<div class="bgded" style="background-image:url({{ url_for('static', filename='img/homepage/backgrounds/bg-part0.png') }});">
   <nav id="mainav" class="hoc clear">
       <!-- ################################################################################################ -->
       <ul class="clear">
@@ -55,8 +55,8 @@
     </nav>
   <div id="pageintro" class="hoc clear">
     <article>
-      <p>Black Eight Agency</p>
-      <h3 class="heading">Gold Analysis System</h3>
+      <p>Newest Info Agency 7</p>
+      <h3 class="heading">Financial Analysis System</h3>
       <footer>
         <ul class="nospace inline pushright">
           <li><a class="btn" href="/dashboard/">Trend Visualization</a></li>
@@ -69,8 +69,8 @@
   <div class="wrapper row1">
     <header id="header" class="hoc clear">
       <div id="logo" class="fl_left">
-        <h1><a href="/">BEA</a></h1>
-        <p>Gold Analysis System</p>
+        <h1><a href="/">NIA7</a></h1>
+        <p>Financial Analysis System</p>
       </div>
       <div id="quickinfo" class="fl_right">
         <ul class="nospace inline">
@@ -131,7 +131,7 @@
     <!-- ################################################################################################ -->
     <div class="sectiontitle">
       <h6 class="heading">Introduction</h6>
-      <p>GAS is the specialization & extension of PFAS</p>
+      <p>FAS is the specialization & extension of PFAS</p>
     </div>
     <div class="group">
       <div class="one_half first">
@@ -152,7 +152,7 @@
           </li>
         </ul>
       </div>
-      <div class="one_half"><img class="inspace-10 borderedbox" src="{{ static_url('img/homepage/pfas.png') }}" alt=""></div>
+      <div class="one_half"><img class="inspace-10 borderedbox" src="{{ url_for('static', filename='img/homepage/pfas.png') }}" alt=""></div>
     </div>
     <!-- ################################################################################################ -->
   </section>
@@ -160,7 +160,7 @@
 <!-- ################################################################################################ -->
 
 <!-- Achievements -->
-<div class="wrapper bgded overlay" style="background-image:url({{ static_url('img/homepage/backgrounds/bg-part3.png') }});">
+<div class="wrapper bgded overlay" style="background-image:url({{ url_for('static', filename='img/homepage/backgrounds/bg-part3.png') }});">
   <section class="hoc container clear"> 
     <!-- ################################################################################################ -->
     <div class="sectiontitle">
@@ -208,7 +208,7 @@
     </div>
     <div class="group latest">
       <article class="one_third first">
-        <figure><a class="imgover" href="#"><img src="{{ static_url('img/homepage/ervin.jpg') }}" alt=""></a></figure>
+        <figure><a class="imgover" href="#"><img src="{{ url_for('static', filename='img/homepage/ervin.jpg')  }}" alt=""></a></figure>
         <h4 class="heading">Yizhe(Ervin) Zhang</h4>
         <ul class="nospace meta">
           <li><i class="fa fa-user"></i> <a href="#">Director</a></li>
@@ -219,7 +219,7 @@
         <footer><a target="_blank" href="https://ervinzhang.pythonanywhere.com">Personal Website</a><br><a target="_blank" href="https://www.linkedin.com/in/yizhe-zhang/">Linkedin</a></footer>
       </article>
       <article class="one_third">
-        <figure><a class="imgover" href="#"><img src="{{ static_url('img/homepage/kinghe.jpg')}}" alt=""></a></figure>
+        <figure><a class="imgover" href="#"><img src="{{ url_for('static', filename='img/homepage/kinghe.jpg') }}" alt=""></a></figure>
         <h4 class="heading">Shijie(King) He</h4>
         <ul class="nospace meta">
           <li><i class="fa fa-user"></i> <a href="#">Director</a></li>
@@ -230,7 +230,7 @@
         <footer><a target="_blank" href="https://www.linkedin.com/in/%E4%BB%95%E6%9D%B0-%E4%BD%95-98a516190/">Linkedin</a></footer>
       </article>
       <article class="one_third">
-        <figure><a class="imgover" href="#"><img src="{{ static_url('img/homepage/colin.jpg') }}" alt=""></a></figure>
+        <figure><a class="imgover" href="#"><img src="{{ url_for('static', filename='img/homepage/colin.jpg') }}" alt=""></a></figure>
         <h4 class="heading">Xuankui(Colin) Shi</h4>
         <ul class="nospace meta">
           <li><i class="fa fa-user"></i> <a href="#">Director</a></li>
@@ -247,11 +247,11 @@
 <!-- ################################################################################################ -->
 
 <!-- Contact -->
-<div id="contact001" class="wrapper row4 bgded overlay" style="background-image:url('{{ static_url('img/homepage/backgrounds/bg-part5.png') }});">
+<div id="contact001" class="wrapper row4 bgded overlay" style="background-image:url({{ url_for('static', filename='img/homepage/backgrounds/bg-part5.png') }});">
   <footer id="footer" class="hoc clear"> 
     <!-- ################################################################################################ -->
     <div class="one_third first">
-      <h6 class="heading">Black Eight Agency</h6>
+      <h6 class="heading">Newest Info Agency 7</h6>
       <ul class="nospace btmspace-30 linklist contact">
         <li><i class="fa fa-map-marker"></i>
           <address>
@@ -303,16 +303,16 @@
 <div class="wrapper row5">
   <div id="copyright" class="hoc clear"> 
     <!-- Copyright &copy; 2020 - All Rights Reserved - xxx -->
-    <p class="fl_left"><a href="#">Black Eight Agency</a></p>
-    <p class="fl_right"><a target="_blank" href="" title="Free Website Templates">Gold Analysis System</a></p>
+    <p class="fl_left"><a href="#">Newest Info Agency 7</a></p>
+    <p class="fl_right"><a target="_blank" href="" title="Free Website Templates">Financial Analysis System</a></p>
   </div>
 </div>
 <a id="backtotop" href="#top"><i class="fa fa-chevron-up"></i></a>
 <!-- ################################################################################################ -->
 
 <!-- JAVASCRIPTS -->
-<script src="{{ static_url('js/jquery.min.js') }}"></script>
-<script src="{{ static_url('js/jquery.backtotop.js') }}"></script>
-<script src="{{ static_url('js/jquery.mobilemenu.js') }}"></script>
+<script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+<script src="{{ url_for('static', filename='js/jquery.backtotop.js') }}"></script>
+<script src="{{ url_for('static', filename='js/jquery.mobilemenu.js') }}"></script>
 </body>
 </html>
