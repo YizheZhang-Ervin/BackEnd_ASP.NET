@@ -13,14 +13,11 @@ app = create_app(env)
 # formal version of start cmd with parameters
 
 @click.command()
-@click.option('--mode', default="develop", type=click.Choice(["develop", "produce"]), help="--develop/--produce")
+# @click.option('--mode', default="develop", type=click.Choice(["develop", "produce"]), help="--develop/--produce")
 @click.option('--host', default='127.0.0.1', type=str, help='x.x.x.x')
 @click.option('--port', default='8080', type=str, help='1-65535')
-def run(mode, host, port):
-    if mode == "develop":
-        app.run(host=host, port=port)
-    else:
-        app.run()
+def run(host, port):
+    app.run(host=host, port=port)
 
 
 if __name__ == '__main__':

@@ -21,7 +21,7 @@ class Config:
     SQLALCHEMY_TRACK_MODIFICATIONS = False
 
 
-class Developing(Config):
+class Development(Config):
     DEBUG = True
     dbinfo = {
         'ENGINE': 'mysql',
@@ -49,7 +49,7 @@ class Testing(Config):
     SQLALCHEMY_DATABASE_URI = get_dbinfo(dbinfo)
 
 
-class Producing(Config):
+class Production(Config):
     dbinfo = {
         'ENGINE': 'mysql',
         'DRIVER': 'pymysql',
@@ -63,8 +63,8 @@ class Producing(Config):
 
 
 envs = {
-    'development': Developing,
+    'development': Development,
     'testing': Testing,
-    'production': Producing,
-    'default': Developing
+    'production': Production,
+    'default': Development
 }
