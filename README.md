@@ -1,5 +1,5 @@
 # NIA7
-Newest Info Agency 7-Financial Analysis System
+Newest Info Agency 7-Hot News Analysis System
 
 ## Virtual Environment  
     virtualenvDirectory > activate  (virtualenv)  
