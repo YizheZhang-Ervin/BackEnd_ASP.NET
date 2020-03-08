@@ -25,7 +25,7 @@ File: Layout CSS
 #pageintro{padding:250px 0; text-align:center;}
 
 #pageintro article{display:block; max-width:65%; margin:0 auto;}
-#pageintro .heading{margin-bottom:20px; font-size:4rem;background-color:rgba(0,0,0,0.8);}
+#pageintro .heading{margin-bottom:20px; font-size:4rem;}
 #pageintro p:first-of-type{margin:0 0 20px 0; text-transform:uppercase; font-size:1.2rem; letter-spacing:5px;}
 #pageintro footer{margin-top:50px;}
 
@@ -223,7 +223,7 @@ td{border-width:0 1px;}
 /* Colours
 --------------------------------------------------------------------------------------------------------------- */
 body{color:#4A4A4A; background-color:#FFFFFF;}
-a{color:#9D8D65;}
+a{color:darkgray;}
 a:active, a:focus{background:transparent;}/* IE10 + 11 Bugfix - prevents grey background */
 hr, .borderedbox{border-color:#D7D7D7;}
 label span{color:#FF0000; background-color:inherit;}
@@ -232,7 +232,7 @@ input:focus, textarea:focus, *:required:focus{border-color:#9D8D65;}
 .overlay::after{color:inherit; background-color:rgba(0,0,0,.4);}
 
 .btn, .btn.inverse:hover{color:#FFFFFF; background-color:#9D8D65; border-color:#9D8D65;}
-.btn:hover, .btn.inverse{color:inherit; background-color:rgba(0,0,0,0.8); border-color:inherit;}
+.btn:hover, .btn.inverse{color:cornsilk; background-color:rgba(0,0,0,0.5); border-color:inherit;}
 
 .icon{color:#FFFFFF; background-color:#9D8D65; border-color:inherit;}
 .icon:hover{color:#9D8D65; background-color:#FFFFFF;}
@@ -242,20 +242,20 @@ input:focus, textarea:focus, *:required:focus{border-color:#9D8D65;}
 
 
 /* Rows */
-.row1{color:gold; background-color:rgba(0,0,0,.55);}
+.row1{color:silver; background-color:rgba(0,0,0,.55);}
 .row2{color:#4A4A4A; background-color:#F2F2F2;}
 .row3{color:#4A4A4A; background-color:#FFFFFF;}
 .row4{color:#CBCBCB;}
-.row5, .row5 a{color:gold; background-color:#9D8D65;}
+.row5, .row5 a{color:rgba(0,0,0,0.6); background-color:#9D8D65;}
 
 
 /* Page Intro */
-#pageintro{color:gold;}
+#pageintro{color:black;}
 
 
 /* Header */
 #header a{color:inherit;}
-#header #logo a{color:gold;}
+#header #logo a{color:silver;}
 
 
 /* Content Area */
@@ -275,13 +275,13 @@ input:focus, textarea:focus, *:required:focus{border-color:#9D8D65;}
 
 /* Navigation */
 #mainav{color:#FFFFFF; background-color:transparent;position:fixed;}
-#mainav li a{color:gold;}
-#mainav .active a, #mainav a:hover, #mainav li:hover > a{color:gold; background-color:inherit;}
-#mainav li li a, #mainav .active li a{color:gold; background-color:rgba(157,141,101,0.9);/* #9D8D65 */ border-color:#9D8D65;}
-#mainav li li:hover > a, #mainav .active .active > a{color:gold; background-color:#9D8D65;}
-#mainav form select{color:gold; background-color:#413C29;}
+#mainav li a{color:rgba(0,0,0,0.6);}
+#mainav .active a, #mainav a:hover, #mainav li:hover > a{color:rgba(0,0,0,0.6); background-color:inherit;}
+#mainav li li a, #mainav .active li a{color:rgba(0,0,0,0.6); background-color:rgba(157,141,101,0.9);/* #9D8D65 */ border-color:#9D8D65;}
+#mainav li li:hover > a, #mainav .active .active > a{color:rgba(0,0,0,0.6); background-color:#9D8D65;}
+#mainav form select{color:rgba(0,0,0,0.6); background-color:#413C29;}
 
-#breadcrumb *{color:gold;}
+#breadcrumb *{color:rgba(0,0,0,0.6);}
 #breadcrumb li:last-child a{}
 
 .container .sidebar nav a{color:inherit; border-color:#D7D7D7;}
