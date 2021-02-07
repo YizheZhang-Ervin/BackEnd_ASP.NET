@@ -1,5 +1,4 @@
 from html import escape
-
 import click
 from flask import Flask, render_template, request, flash, url_for, make_response, jsonify
 

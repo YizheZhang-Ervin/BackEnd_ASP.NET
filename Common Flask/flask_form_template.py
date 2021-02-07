@@ -6,7 +6,7 @@ from wtforms import SubmitField, StringField, PasswordField
 # WTF validator
 from wtforms.validators import DataRequired, EqualTo
 
-from flask_backend_template import app
+from app import app
 
 
 class RegisterForm:

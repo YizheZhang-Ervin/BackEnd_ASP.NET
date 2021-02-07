@@ -1,31 +1,60 @@
-# NIA7
-Newest Info Agency 7-Hot News Analysis System
+# TMPL_Flask_Tornado  
+  
+## Common Flask Folder  
+常规flask用法的模板，不需要前后端传值  
+  
+### Features   
+Gold Analysis  
+单app.py拆分为多个文件  
+form模板  
+  
+## RESTful Flask Folder  
+Flask Restful用法的模板，需要前后端传值  
+  
+### Features   
+get动态路由传值  
+get问号路由参数传值  
+post传值  
+  
+## Flask Related Notes  
+  
+### Virtual Environment  
+Virtual Env libs: pip freeze > requirements.txt  
+Dependency libs: pipreqs ./  
+  
+### Run by development  
+Parameters:  
+--mode: develop/produce  
+--host: default 127.0.0.1  
+--port: default 8080  
 
-## Virtual Environment  
-    virtualenvDirectory > activate  (virtualenv)  
-    workon virtualenvName  (virtualenvwrapper)  
-## Required python libs  
-    pip install -r requirements.txt  
-## Run by development  
-Parameters:
-    --mode: develop/produce
-    --host: default 127.0.0.1
-    --port: default 8080 
-
-    Method 1) path> set FLASK_APP=manage.py  
-              path> flask run  
+Method 1) path> set FLASK_APP=manage.py  
+          path> flask run  
+Method 2) path> python -m flask run  
+Method 3) path>python -m flask run --host=0.0.0.0 (all users)  
     
-    Method 2) path> python -m flask run  
-    
-    Method 3) path>python -m flask run --host=0.0.0.0 (all users)  
-    
-## Deploy by produce
-    Gunicorn Common 1) gunicorn -w 4 -b 127.0.0.1:4000 myproject:app  
-    
-    Gunicorn Factory 2) gunicorn "myproject:create_app()"  
-    
-    uWSGI 1) uwsgi --http 127.0.0.1:5000 --module myproject:app  
-    
-    twistd 1) twistd -n web --port tcp:8080 --wsgi myproject.app  
-    
-    Gevent 1) python manage_gevent.py  
+### Deploy by production  
+Gunicorn Common 1) gunicorn -w 4 -b 127.0.0.1:4000 myproject:app  
+Gunicorn Factory 2) gunicorn "myproject:create_app()"  
+uWSGI 1) uwsgi --http 127.0.0.1:5000 --module myproject:app  
+twistd 1) twistd -n web --port tcp:8080 --wsgi myproject.app  
+Gevent 1) python manage_gevent.py  
+  
+### Heroku Files (Procfile/Procfile.windows/runtime.txt/.flskenv)  
+heroku run python xxx  
+  
+## Tornado  
+### Development environment:
+BEA path > python manage.py  (default port:8000)  
+  
+### Deployment and produce environment:
+BEA path > python manage.py --env=produce  --port=80  (formal port:80)  
+  
+### All optional parameters   
+--port = 8000 [default]  
+--env = develop [default] / produce  
+--processtype = single [default] / multiple  
+--daemon = off [default] / on  
+  
+## Git Files (.gitatrributes/.gitignore/README.md)  
+  
