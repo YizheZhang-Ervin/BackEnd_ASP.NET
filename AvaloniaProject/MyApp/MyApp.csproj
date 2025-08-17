@@ -7,6 +7,12 @@
     <ApplicationManifest>app.manifest</ApplicationManifest>
     <AvaloniaUseCompiledBindingsByDefault>true</AvaloniaUseCompiledBindingsByDefault>
   </PropertyGroup>
+  <!-- AOT部署 -->
+  <!-- <PropertyGroup>
+      <PublishAot>true</PublishAot>
+      <BuiltInComInteropSupport>false</BuiltInComInteropSupport>
+      <TrimMode>link</TrimMode>
+  </PropertyGroup> -->
 
   <ItemGroup>
     <Folder Include="Models\" />
@@ -25,4 +31,9 @@
     </PackageReference>
     <PackageReference Include="CommunityToolkit.Mvvm" Version="8.2.1" />
   </ItemGroup>
+  <!-- AOT部署 -->
+  <!-- <ItemGroup>
+    <TrimmerRootAssembly Include="Avalonia.Themes.Fluent" />
+    <TrimmerRootAssembly Include="Avalonia.Themes.Default" />
+  </ItemGroup> -->
 </Project>

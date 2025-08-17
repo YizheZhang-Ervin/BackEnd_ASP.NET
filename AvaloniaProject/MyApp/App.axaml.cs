@@ -16,6 +16,7 @@ public partial class App : Application
         AvaloniaXamlLoader.Load(this);
     }
 
+    // 当框架初始化完成时，将调用此方法，ApplicationLifetime属性包含所选择的生命周期
     public override void OnFrameworkInitializationCompleted()
     {
         if (ApplicationLifetime is IClassicDesktopStyleApplicationLifetime desktop)
