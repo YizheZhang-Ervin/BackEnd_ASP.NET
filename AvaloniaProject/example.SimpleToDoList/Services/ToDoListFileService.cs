@@ -8,18 +8,17 @@ using SimpleToDoList.Models;
 namespace SimpleToDoList.Services;
 
 /// <summary>
-/// This class provides the needed functions to save and restore a ToDoList. This step is fully optional for this tutorial
+/// 存/恢复ToDoList的方法
 /// </summary>
 public static class ToDoListFileService
 {
-    // This is a hard coded path to the file. It may not be available on every platform. In your real world App you may 
-    // want to make this configurable
+    // 持久化文件路径
     private static string _jsonFileName = 
         Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData),
         "Avalonia.SimpleToDoList", "MyToDoList.txt");
 
     /// <summary>
-    /// Stores the given items into a file on disc
+    /// 存given items into a file on disc
     /// </summary>
     /// <param name="itemsToSave">The items to save</param>
     public static async Task SaveToFileAsync(IEnumerable<ToDoItem> itemsToSave)
@@ -35,7 +34,7 @@ public static class ToDoListFileService
     }
 
     /// <summary>
-    /// Loads the file from disc and returns the items stored inside
+    /// 加载the file from disc and returns the items stored inside
     /// </summary>
     /// <returns>An IEnumerable of items loaded or null in case the file was not found</returns>
     public static async Task<IEnumerable<ToDoItem>?> LoadFromFileAsync()

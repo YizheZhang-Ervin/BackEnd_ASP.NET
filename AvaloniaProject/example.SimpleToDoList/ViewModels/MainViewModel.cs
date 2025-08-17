@@ -8,16 +8,16 @@ using SimpleToDoList.Services;
 namespace SimpleToDoList.ViewModels;
 
 /// <summary>
-/// This is our MainViewModel in which we define the ViewModel logic to interact between our View and the TodoItems
+/// MainViewModel定义ViewModel逻辑（View和TodoItems交互）
 /// </summary>
 public partial class MainViewModel : ViewModelBase
 {
     public MainViewModel()
     {
-        // We can use this to add some items for the designer. 
-        // You can also use a DesignTime-ViewModel
+        // 新增items
         if (Design.IsDesignMode)
         {
+            // ObservableCollection可以通知绑定到它的UI元素数据源的变化
             ToDoItems = new ObservableCollection<ToDoItemViewModel>(new[]
             {
                 new ToDoItemViewModel() { Content = "Hello" },
@@ -27,48 +27,51 @@ public partial class MainViewModel : ViewModelBase
     }
     
     /// <summary>
-    /// Gets a collection of <see cref="ToDoItem"/> which allows adding and removing items
+    /// 一个可增删items的集合<see cref="ToDoItem"/>
     /// </summary>
     public ObservableCollection<ToDoItemViewModel> ToDoItems { get; } = new ObservableCollection<ToDoItemViewModel>();
 
     
     // -- Adding new Items --
-    
+
     /// <summary>
-    /// This command is used to add a new Item to the List
+    /// 新增Item到List
     /// </summary>
+    // 中继命令（将命令的执行逻辑和可执行状态判断封装在 ViewModel 中）
     [RelayCommand (CanExecute = nameof(CanAddItem))]
     private void AddItem()
     {
-        // Add a new item to the list
+        // 新增
         ToDoItems.Add(new ToDoItemViewModel() {Content = NewItemContent});
         
-        // reset the NewItemContent
+        // 清空NewItemContent
         NewItemContent = null;
     }
 
     /// <summary>
-    /// Gets or set the content for new Items to add. If this string is not empty, the AddItemCommand will be enabled automatically
+    /// 取/设新item. 不空则AddItemCommand自动生效
     /// </summary>
     [ObservableProperty] 
-    [NotifyCanExecuteChangedFor(nameof(AddItemCommand))] // This attribute will invalidate the command each time this property changes
+    // _newItemContent变化则执行AddItemCommand
+    [NotifyCanExecuteChangedFor(nameof(AddItemCommand))]
     private string? _newItemContent;
 
     /// <summary>
-    /// Returns if a new Item can be added. We require to have the NewItem some Text
+    /// 是否允许新增item
     /// </summary>
     private bool CanAddItem() => !string.IsNullOrWhiteSpace(NewItemContent);
     
     // -- Removing Items --
     
     /// <summary>
-    /// Removes the given Item from the list
+    /// 从list移除指定item
     /// </summary>
     /// <param name="item">the item to remove</param>
+    // 中继命令（将命令的执行逻辑和可执行状态判断封装在 ViewModel 中）
     [RelayCommand]
     private void RemoveItem(ToDoItemViewModel item)
     {
-        // Remove the given item from the list
+        // 移除item
         ToDoItems.Remove(item);
     }
 }

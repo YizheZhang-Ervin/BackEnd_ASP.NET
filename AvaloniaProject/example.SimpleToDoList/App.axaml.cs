@@ -11,51 +11,54 @@ namespace SimpleToDoList;
 
 public partial class App : Application
 {
+    // 初始化
     public override void Initialize()
     {
         AvaloniaXamlLoader.Load(this);
     }
 
-    // This is a reference to our MainViewModel which we use to save the list on shutdown. You can also use Dependency Injection 
-    // in your App.
+    // 加载MainViewModel
     private readonly MainViewModel _mainViewModel = new MainViewModel();
     
+    // 初始化完成
     public override async void OnFrameworkInitializationCompleted()
     {
         if (ApplicationLifetime is IClassicDesktopStyleApplicationLifetime desktop)
         {
             desktop.MainWindow = new MainWindow
             {
-                DataContext = _mainViewModel // Remember to change this line to use our private reference to the MainViewModel
+                // 私有化引用
+                DataContext = _mainViewModel
             };
             
-            // Listen to the ShutdownRequested-event
+            // 监听关闭app请求
             desktop.ShutdownRequested += DesktopOnShutdownRequested;
         }
 
+        // 调用父方法初始化完成方法
         base.OnFrameworkInitializationCompleted();
         
-        // Init the MainViewModel 
+        // 异步初始化MainViewModel 
         await InitMainViewModelAsync();
     }
-    
-    
-    // We want to save our ToDoList before we actually shutdown the App. As File I/O is async, we need to wait until file is closed 
-    // before we can actually close this window
 
-    private bool _canClose; // This flag is used to check if window is allowed to close
+    // 关闭app前保存TodoList（File I/O是异步的）
+    // 检查windows是否可关
+    private bool _canClose;
+    // 关闭app请求
     private async void DesktopOnShutdownRequested(object? sender, ShutdownRequestedEventArgs e)
     {
+        // 首次取消关闭活动
         e.Cancel = !_canClose; // cancel closing event first time
 
         if (!_canClose)
         {
-            // To save the items, we map them to the ToDoItem-Model which is better suited for I/O operations
+            // 把items转换成ToDoItem-Model（更适合IO操作）
             var itemsToSave = _mainViewModel.ToDoItems.Select(item => item.GetToDoItem());
-            
+            // 保存
             await ToDoListFileService.SaveToFileAsync(itemsToSave);
             
-            // Set _canClose to true and Close this Window again
+            // 把_canClose设为true，再一次关window
             _canClose = true;
             if (ApplicationLifetime is IClassicDesktopStyleApplicationLifetime desktop)
             {
@@ -64,12 +67,11 @@ public partial class App : Application
         }
     }
     
-    // Optional: Load data from disc
+    // 从磁盘加载数据
     private async Task InitMainViewModelAsync()
     {
-        // get the items to load
+        // 从文件异步加载items
         var itemsLoaded = await ToDoListFileService.LoadFromFileAsync();
-
         if (itemsLoaded is not null)
         {
             foreach (var item in itemsLoaded)

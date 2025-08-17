@@ -3,7 +3,7 @@
 namespace SimpleToDoList.Models;
 
 /// <summary>
-/// This is our Model for a simple ToDoItem. 
+/// ToDoItem的Model
 /// </summary>
 public class ToDoItem
 {

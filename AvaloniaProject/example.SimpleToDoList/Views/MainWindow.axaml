@@ -11,35 +11,34 @@
         Title="SimpleToDoList">
 
     <Design.DataContext>
-        <!-- This only sets the DataContext for the previewer in an IDE,
-             to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) -->
+        <!-- 设置IDE预览器数据上下文DataContext -->
+        <!-- 运行时上下文用在App.axaml.cs -->
         <vm:MainViewModel />
     </Design.DataContext>
 
-    <!-- We give a name to the root grid in order to access it later -->
+    <!--root grid起个名字 -->
     <Grid RowDefinitions="Auto, *, Auto"
           x:Name="Root">
-
-        <!-- This is our title text block. We use Style.Classes to style it accordingly -->
+        <!-- 标题text block. 样式用Style.Classes -->
         <TextBlock Text="My ToDo-List" Classes="h1" />
-
+        <!-- 滚动布局 -->
         <ScrollViewer Grid.Row="1">
-            <!-- This ItemsControl show all added ToDoItems. -->
-            <!-- It needs to be placed inside a ScrollViewer because other than a ListBox it has not its own -->
+            <!-- 展示所有被新增的ToDoItems -->
             <ItemsControl ItemsSource="{Binding ToDoItems}">
+                <!-- ItemTemplate定义item展现形式 -->
                 <ItemsControl.ItemTemplate>
-                    <!-- The ItemTemplate defines how each item should be represented -->
-                    <!-- Our Item will be represented by a CheckBox and a Delete-Button -->
+                    <!-- 用选择框和删除按钮展示 -->
                     <DataTemplate DataType="vm:ToDoItemViewModel">
                         <Grid ColumnDefinitions="*, Auto">
                             <CheckBox IsChecked="{Binding IsChecked}"
                                       Content="{Binding Content}" />
-
-                            <!-- Note how we use the Root-Grid to get the MainViewModel here. As we use compiled bindings we have to cast the DataContext -->
-                            <!-- The command parameter is the local ToDoItemViewModel being processed --> 
+                            <!-- 用Root-Grid获取MainViewModel -->
+                            <!-- 编译绑定要DataContext -->
+                            <!-- CommandParameter是正在处理的local的ToDoItemViewModel-->
                             <Button Grid.Column="1"
                                     Command="{Binding #Root.((vm:MainViewModel)DataContext).RemoveItemCommand}"
                                     CommandParameter="{Binding .}">
+                                <!-- 动态绑定icon -->
                                 <PathIcon Data="{DynamicResource DeleteIconData}"
                                           Height="15"
                                           Foreground="Red" />
@@ -50,17 +49,18 @@
             </ItemsControl>
         </ScrollViewer>
 
-        <!-- This TextBox can be used to add new ToDoItems -->
+        <!-- TextBox用于新增ToDoItems -->
         <TextBox Grid.Row="2"
                  Text="{Binding NewItemContent}"
                  Watermark="Add a new Item">
             <TextBox.InnerRightContent>
+                <!-- 新增按钮 -->
                 <Button Command="{Binding AddItemCommand}">
                     <PathIcon Data="{DynamicResource AcceptIconData}"
                               Foreground="Green" />
                 </Button>
             </TextBox.InnerRightContent>
-            <!-- KeyBindings allow us to define KeyGestures  -->
+            <!-- KeyBindings可以定义KeyGestures  -->
             <TextBox.KeyBindings>
                 <KeyBinding Gesture="Enter" Command="{Binding AddItemCommand}" />
             </TextBox.KeyBindings>

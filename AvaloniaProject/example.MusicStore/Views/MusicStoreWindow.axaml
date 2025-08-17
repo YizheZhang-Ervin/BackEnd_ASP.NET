@@ -23,7 +23,7 @@
     </ExperimentalAcrylicBorder>
 
     <Panel Margin="40">
-      <!-- 用户控件元素 -->
+      <!-- 用户控件元素：MusicStore -->
       <views:MusicStoreView />
     </Panel>
   </Panel>

@@ -14,14 +14,15 @@ namespace Avalonia.MusicStore.Views
             if (Design.IsDesignMode)
                 return;
 
-            // 注册消息处理器
+            // 注册消息处理器（购买专辑消息）
             WeakReferenceMessenger.Default.Register<MainWindow, PurchaseAlbumMessage>(this, static (w, m) =>
             {
+                // MusicStore窗口
                 var dialog = new MusicStoreWindow
                 {
                     DataContext = new MusicStoreViewModel()
                 };
-
+                // 用对话框内容回消息
                 m.Reply(dialog.ShowDialog<AlbumViewModel?>(w));
             });
         }

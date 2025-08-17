@@ -5,19 +5,18 @@ namespace SimpleToDoList.ViewModels;
 
 /*   NOTE:
  *
- *   Please mind that this samples uses the CommunityToolkit.Mvvm package for the ViewModels. Feel free to use any other
- *   MVVM-Framework (like ReactiveUI or Prism) that suits your needs best.
+ *   用了CommunityToolkit.Mvvm package for the ViewModels
  *
  */
 
 
 /// <summary>
-/// This is a ViewModel which represents a <see cref="Models.ToDoItem"/>
+/// ViewModel which represents a <see cref="Models.ToDoItem"/>
 /// </summary>
 public partial class ToDoItemViewModel : ViewModelBase
 {
     /// <summary>
-    /// Creates a new blank ToDoItemViewModel
+    /// 创建新的空的ToDoItemViewModel
     /// </summary>
     public ToDoItemViewModel()
     {
@@ -25,7 +24,7 @@ public partial class ToDoItemViewModel : ViewModelBase
     }
     
     /// <summary>
-    /// Creates a new ToDoItemViewModel for the given <see cref="Models.ToDoItem"/>
+    /// 创建一个新的ToDoItemViewModel for the given <see cref="Models.ToDoItem"/>
     /// </summary>
     /// <param name="item">The item to load</param>
     public ToDoItemViewModel(ToDoItem item)
@@ -39,6 +38,7 @@ public partial class ToDoItemViewModel : ViewModelBase
     /// Gets or sets the checked status of each item
     /// </summary>
     // NOTE: This property is made without source generator. Uncomment the line below to use the source generator
+    // ObservableProperty：属性值发生变化时，它能自动通知 UI 进行更新，实现数据与视图的双向绑定
     // [ObservableProperty] 
     private bool _isChecked;
 

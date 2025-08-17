@@ -24,8 +24,9 @@
           MaterialOpacity="0.65" />
       </ExperimentalAcrylicBorder.Material>
     </ExperimentalAcrylicBorder>
-    <!-- 排版按钮 -->
+    <!-- 排版：按钮 -->
     <Panel Margin="40">
+      <!-- 新增专辑 -->
       <Button HorizontalAlignment="Right" VerticalAlignment="Top"
               Command="{Binding AddAlbumCommand}">
         <!-- 图标：样式在icons.axmal -->
@@ -43,7 +44,7 @@
 
           <ItemsControl.ItemTemplate>
             <DataTemplate>
-            <!-- 用户控件元素 -->
+            <!-- 用户控件元素: 专辑页面 -->
               <views:AlbumView Margin="0 0 20 20" />
             </DataTemplate>
           </ItemsControl.ItemTemplate>

@@ -5,6 +5,7 @@ using GroupBox.ViewModels;
 
 namespace GroupBox;
 
+// view和viewModel绑定器
 public class ViewLocator : IDataTemplate
 {
     public Control? Build(object? data)

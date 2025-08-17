@@ -15,6 +15,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <!-- 指定剪裁器不移除的代码 -->
     <TrimmerRootDescriptor Include="Roots.xml" />
   </ItemGroup>
 
