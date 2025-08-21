@@ -36,9 +36,10 @@ cd MyApp
 dotnet run
 
 # 示例
-- AvaloniaProject/example.TodoList
-- AvaloniaProject/example.GroupBox（用ReactiveUI）
-- AvaloniaProject/example.MusicStore
+- AvaloniaProject/demos/TodoList
+- AvaloniaProject/demos/GroupBox（用ReactiveUI）
+- AvaloniaProject/demos/MusicStore
+- AvaloniaProject/demos/其他官方例子
 
 ## 原生AOT部署
 dotnet publish -r win-x64 -c Release
